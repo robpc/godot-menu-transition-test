@@ -1,0 +1,195 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://TransitionContainer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Menu.gd" type="Script" id=2]
+[ext_resource path="res://panel_style.tres" type="StyleBox" id=3]
+[ext_resource path="res://menu_panel_style.tres" type="StyleBox" id=4]
+
+[node name="Main" type="Node"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Margin" type="MarginContainer" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 8
+custom_constants/margin_top = 8
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="CenterContainer" parent="CanvasLayer/Margin"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 1016.0
+margin_bottom = 592.0
+
+[node name="Menu" type="PanelContainer" parent="CanvasLayer/Margin/Container"]
+margin_left = 389.0
+margin_top = 155.0
+margin_right = 619.0
+margin_bottom = 429.0
+custom_styles/panel = ExtResource( 4 )
+script = ExtResource( 2 )
+
+[node name="Layout" type="VBoxContainer" parent="CanvasLayer/Margin/Container/Menu"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 226.0
+margin_bottom = 270.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Margin/Container/Menu/Layout"]
+margin_right = 222.0
+margin_bottom = 25.0
+text = "This is the status bar"
+
+[node name="MenuTransition" parent="CanvasLayer/Margin/Container/Menu/Layout" instance=ExtResource( 1 )]
+margin_top = 33.0
+margin_right = 222.0
+margin_bottom = 233.0
+rect_min_size = Vector2( 140, 200 )
+transition_time = 0.3
+
+[node name="Main" type="PanelContainer" parent="CanvasLayer/Margin/Container/Menu/Layout/MenuTransition"]
+margin_right = 222.0
+margin_bottom = 200.0
+custom_styles/panel = ExtResource( 3 )
+
+[node name="Layout" type="VBoxContainer" parent="CanvasLayer/Margin/Container/Menu/Layout/MenuTransition/Main"]
+margin_left = 4.0
+margin_top = 16.0
+margin_right = 218.0
+margin_bottom = 184.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/Margin/Container/Menu/Layout/MenuTransition/Main/Layout"]
+margin_left = 80.0
+margin_right = 134.0
+margin_bottom = 25.0
+size_flags_horizontal = 6
+size_flags_vertical = 1
+text = "Main"
+
+[node name="ButtonA" type="Button" parent="CanvasLayer/Margin/Container/Menu/Layout/MenuTransition/Main/Layout"]
+margin_top = 33.0
+margin_right = 214.0
+margin_bottom = 70.0
+text = "Menu A"
+
+[node name="ButtonB" type="Button" parent="CanvasLayer/Margin/Container/Menu/Layout/MenuTransition/Main/Layout"]
+margin_top = 78.0
+margin_right = 214.0
+margin_bottom = 115.0
+text = "Menu B"
+
+[node name="MenuA" type="PanelContainer" parent="CanvasLayer/Margin/Container/Menu/Layout/MenuTransition"]
+margin_left = 224.0
+margin_right = 446.0
+margin_bottom = 200.0
+custom_styles/panel = ExtResource( 3 )
+
+[node name="Layout" type="VBoxContainer" parent="CanvasLayer/Margin/Container/Menu/Layout/MenuTransition/MenuA"]
+margin_left = 4.0
+margin_top = 16.0
+margin_right = 218.0
+margin_bottom = 184.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/Margin/Container/Menu/Layout/MenuTransition/MenuA/Layout"]
+margin_left = 65.0
+margin_right = 148.0
+margin_bottom = 25.0
+size_flags_horizontal = 6
+size_flags_vertical = 1
+text = "Menu A"
+
+[node name="BackButton" type="Button" parent="CanvasLayer/Margin/Container/Menu/Layout/MenuTransition/MenuA/Layout"]
+margin_top = 33.0
+margin_right = 214.0
+margin_bottom = 70.0
+text = "Back"
+
+[node name="MenuB" type="PanelContainer" parent="CanvasLayer/Margin/Container/Menu/Layout/MenuTransition"]
+margin_left = 224.0
+margin_right = 446.0
+margin_bottom = 200.0
+custom_styles/panel = ExtResource( 3 )
+
+[node name="Layout" type="VBoxContainer" parent="CanvasLayer/Margin/Container/Menu/Layout/MenuTransition/MenuB"]
+margin_left = 4.0
+margin_top = 16.0
+margin_right = 218.0
+margin_bottom = 184.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/Margin/Container/Menu/Layout/MenuTransition/MenuB/Layout"]
+margin_left = 65.0
+margin_right = 148.0
+margin_bottom = 25.0
+size_flags_horizontal = 6
+size_flags_vertical = 1
+text = "Menu B"
+
+[node name="ButtonB2" type="Button" parent="CanvasLayer/Margin/Container/Menu/Layout/MenuTransition/MenuB/Layout"]
+margin_top = 33.0
+margin_right = 214.0
+margin_bottom = 70.0
+text = "Menu B2"
+
+[node name="BackButton" type="Button" parent="CanvasLayer/Margin/Container/Menu/Layout/MenuTransition/MenuB/Layout"]
+margin_top = 78.0
+margin_right = 214.0
+margin_bottom = 115.0
+text = "Back"
+
+[node name="MenuB2" type="PanelContainer" parent="CanvasLayer/Margin/Container/Menu/Layout/MenuTransition"]
+margin_left = 224.0
+margin_right = 446.0
+margin_bottom = 200.0
+custom_styles/panel = ExtResource( 3 )
+
+[node name="Layout" type="VBoxContainer" parent="CanvasLayer/Margin/Container/Menu/Layout/MenuTransition/MenuB2"]
+margin_left = 4.0
+margin_top = 16.0
+margin_right = 218.0
+margin_bottom = 184.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/Margin/Container/Menu/Layout/MenuTransition/MenuB2/Layout"]
+margin_left = 59.0
+margin_right = 155.0
+margin_bottom = 25.0
+size_flags_horizontal = 6
+size_flags_vertical = 1
+text = "Menu B2"
+
+[node name="BackButton" type="Button" parent="CanvasLayer/Margin/Container/Menu/Layout/MenuTransition/MenuB2/Layout"]
+margin_top = 33.0
+margin_right = 214.0
+margin_bottom = 70.0
+text = "Back"
+
+[node name="Bottom" type="Label" parent="CanvasLayer/Margin/Container/Menu/Layout"]
+margin_left = 70.0
+margin_top = 241.0
+margin_right = 151.0
+margin_bottom = 266.0
+size_flags_horizontal = 4
+text = "Bottom"
+
+[connection signal="pressed" from="CanvasLayer/Margin/Container/Menu/Layout/MenuTransition/Main/Layout/ButtonA" to="CanvasLayer/Margin/Container/Menu" method="_on_ButtonA_pressed"]
+[connection signal="pressed" from="CanvasLayer/Margin/Container/Menu/Layout/MenuTransition/Main/Layout/ButtonB" to="CanvasLayer/Margin/Container/Menu" method="_on_ButtonB_pressed"]
+[connection signal="pressed" from="CanvasLayer/Margin/Container/Menu/Layout/MenuTransition/MenuA/Layout/BackButton" to="CanvasLayer/Margin/Container/Menu" method="_on_BackButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/Margin/Container/Menu/Layout/MenuTransition/MenuB/Layout/ButtonB2" to="CanvasLayer/Margin/Container/Menu" method="_on_ButtonB2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Margin/Container/Menu/Layout/MenuTransition/MenuB/Layout/BackButton" to="CanvasLayer/Margin/Container/Menu" method="_on_BackButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/Margin/Container/Menu/Layout/MenuTransition/MenuB2/Layout/BackButton" to="CanvasLayer/Margin/Container/Menu" method="_on_MenuB2_BackButton_pressed"]

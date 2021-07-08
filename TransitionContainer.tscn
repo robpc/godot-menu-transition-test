@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://TransitionContainer.gd" type="Script" id=1]
+
+[node name="TransitionContainer" type="Container"]
+margin_top = 18.0
+margin_right = 133.0
+margin_bottom = 18.0
+rect_clip_content = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="resized" from="." to="." method="_on_resized"]
