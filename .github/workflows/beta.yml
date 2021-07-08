@@ -1,0 +1,28 @@
+name: Deploy Beta
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  exports:
+    name: Deploy to GH Pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+      - name: Add Build Info
+        uses: robpc/godot-build-info-action@v1
+      - name: Export html from Godot
+        uses: robpc/godot-export-action@v3.3.2
+        with:
+          preset: html
+          export_path: build/html/index.html
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: gh-pages
+          folder: build/html
